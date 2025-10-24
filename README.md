@@ -4,7 +4,7 @@
 This task is to build an online (preferably real-time) video stabilization method for UAV footage. We provide framed videos from three flight missions and corresponding sensor logs. The focus is on methods that do not rely on future frames at inference time.
 
 ## Setup
-1. Request access to the dataset https://tytantechnologies-my.sharepoint.com/:f:/r/personal/daria_m_tytan-technologies_com/Documents/Hackaton_Oct25/data?csf=1&web=1&e=IcGAVz by emailing:
+1. Request access to the dataset https://tytantechnologies-my.sharepoint.com/:u:/r/personal/daria_m_tytan-technologies_com/Documents/Hackaton_Oct25/data.zip?csf=1&web=1&e=W94DWa by emailing:
     - daria.m@tytan-technologies.com
     - jerge.moreno@tytan-technologies.com  
     In the email subject put your name, surname and email. You should receive access information in reply.
