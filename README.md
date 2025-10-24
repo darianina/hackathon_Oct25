@@ -9,7 +9,7 @@ This task is to build an online (preferably real-time) video stabilization metho
     - jerge.moreno@tytan-technologies.com  
     In the email subject put your name, surname and email. You should receive access information in reply.
 2. Extract the downloaded data and place it under the `data` directory in the project folder.
-3. Install the dependencies or run the notebook in Google Colab.
+3. Install the dependencies.
 4. Test the dataloader and visualize data for debugging:
     - `python test.py`
 
