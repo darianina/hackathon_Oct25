@@ -6,7 +6,6 @@ import random
 from itertools import repeat
 from multiprocessing.pool import Pool
 from pathlib import Path
-import yaml
 import re
 import cv2
 import numpy as np
