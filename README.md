@@ -4,7 +4,11 @@
 This task is to build an online (preferably real-time) video stabilization method for UAV footage. We provide framed videos from three flight missions and corresponding sensor logs. The focus is on methods that do not rely on future frames at inference time.
 
 ## Setup
+<<<<<<< HEAD
 1. Request access to the dataset https://tytantechnologies-my.sharepoint.com/:u:/r/personal/daria_m_tytan-technologies_com/Documents/Hackaton_Oct25/data.zip?csf=1&web=1&e=W94DWa by emailing:
+=======
+1. Request access to the dataset https://tytantechnologies-my.sharepoint.com/:u:/r/personal/daria_m_tytan-technologies_com/Documents/Hackaton_Oct25/data.zip?csf=1&web=1&e=96pdUg by emailing:
+>>>>>>> c2d6b1accd9814037c200a8928b1e8605fc610d4
     - daria.m@tytan-technologies.com
     - jerge.moreno@tytan-technologies.com  
     In the email subject put your name, surname and email. You should receive access information in reply.
@@ -38,9 +42,11 @@ The sensor CSVs include the following fields:
 - `wz_radDs`: angular rate around the z-axis of the body frame, in rad/s  
 - `q_OB = [qw, qx, qy, qz]^T`: components of the orientation quaternion (Hamilton convention)
 
-![UAV Frame](vis/uav.jpg){ width=33% }
+![UAV Frame](vis/uav.jpg)
 
 ## Notes
 - Prefer online approaches that do not use future frames at inference.
 - Synchronization between sensors and frames may require additional processing; this is a valid area for improvement.
+
 - Use the provided baseline as a starting point or implement a new method as desired.
+
