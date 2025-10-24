@@ -18,8 +18,10 @@ pip install -r requirements.txt
 4. Test the dataloader and visualize data for debugging:
     - `python test.py`
 
+You can also completely discard this repository and process the data however you like it:)
+
 ## Development
-A baseline implementation is provided as `baseline.py`. It uses optical flow and relies only on image data. Feel free to reuse it or develop your own stabilization algorithm. Note: online and real-time stabilization (no use of future frames) is much more valuable for this challenge.
+A baseline implementation is provided as `baseline.py`. It uses optical flow and relies only on image data. Feel free to develop your own stabilization algorithm. Note: online and real-time stabilization (no use of future frames) is much more valuable for this challenge.
 
 ## Data
 - Framed videos for 3 flight missions are provided.
