@@ -13,10 +13,13 @@ def main():
     # Hyp dict required by the dataloader (minimal fields used by dataset)
     hyp = {
         "num_frames": 3,                      # temporal clip length (T)
+        "image_size": 1080,
+        "batch_size": 1,
         "skip_rate": [0, 1, 2],               # sampling offsets (len == num_frames)
         "val_skip_rate": [0, 1, 2],           # same for val
         "debug_data": True,                   # enable plotting debug images
         "frame_wise": 0,                      # 0 => temporal albumentations
+        "is_training": False,                  # training mode
     }
 
     # Debug output (plots will be written here)
@@ -28,12 +31,12 @@ def main():
         path=images_root,
         annotation_path=labels_root,
         image_root_path=images_root,
-        imgsz=320,
-        batch_size=1,
+        imgsz=hyp["image_size"],
+        batch_size=hyp["batch_size"],
         stride=32,
         hyp=hyp,
         augment=False,
-        is_training=False,
+        is_training=hyp["is_training"],
         debug_dir=debug_dir,
     )
 
@@ -66,7 +69,9 @@ def main():
 
     # Plot local position data to understand video and logs synchronization
     plot = None # local position flight data plot # set batch_size to 1
-
+    assert not hyp["is_training"] and dataloader.batch_size==1, "Set is_training=False and batch_size=1 to plot scaled imu value on frame"
+    os.makedirs(os.path.join(debug_dir, "imu_plots"), exist_ok=True)
+    
     for batch_idx, (imgs, labels, paths, shapes, main_frame_ids, label_paths) in enumerate(dataloader):
         # labels: (B, T, F)
         # 8th, 9th fields are ac_x, ac_y
@@ -74,7 +79,7 @@ def main():
             image=imgs[main_frame_ids[0]],  # main frame of first sample in batch
             plot=plot,
             label=labels[0][main_frame_ids[0]][8:10],  # ac_x, ac_y for all frames of first sample
-            fname=os.path.join(debug_dir, f"local_position_on_frame_batch{batch_idx}.jpg")
+            fname=os.path.normpath(os.path.join(debug_dir, f"imu_plots/local_position_on_frame_batch{batch_idx}.jpg"))
         )
 
 

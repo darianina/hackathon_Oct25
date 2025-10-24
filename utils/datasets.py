@@ -137,6 +137,7 @@ class LoadClipsAndLabels(Dataset):
             self.label_files = img2label_paths(self.img_files, self.annotation_path)  # labels
 
         if not exists:
+            print(f'{prefix}Caching labels for {len(self.img_files)} images to {cache_path}...')
             cache, exists = self.cache_labels(cache_path, prefix), False  # cache
         # Display cache
         nf, nm, ne, nc, n = cache.pop('results')  # found, missing, empty, corrupted, total
@@ -282,17 +283,9 @@ class LoadClipsAndLabels(Dataset):
                     label_vec = np.array(parsed, dtype=np.float32)
                     x[img_path] = (label_vec, None, (0, 0), None)
                     nf += 1
-
-        # fill shapes for all images (read image once per image)
+                    
         for img_path in list(x.keys()):
-            try:
-                im = cv2.imread(img_path)
-                if im is None:
-                    h, w = 0, 0
-                else:
-                    h, w = im.shape[:2]
-            except Exception:
-                h, w = 0, 0
+            h, w = 0, 0
             lbl, inst, _, segs = x[img_path]
             x[img_path] = (lbl, inst, (w, h), segs)
 

@@ -43,6 +43,10 @@ def plot_local_position_on_frame(image, plot, label, fname='localization_on_fram
     # Ensure image is a HxWxC uint8 numpy / PIL for compositing
     # Accept torch.Tensor, numpy.ndarray or PIL.Image
 
+    # Plots scaled IMU measurements (ac_x, ac_y) onto the image as an inset plot
+    # Double-check that IMU values lie in range, we specify some experimental for visualization: [-5, 25]
+    imu_min, imu_max = -5.0, 25.0
+
     def to_pil(img):
         if isinstance(img, Image.Image):
             return img.convert("RGB")
@@ -106,10 +110,9 @@ def plot_local_position_on_frame(image, plot, label, fname='localization_on_fram
         raise ValueError("label must be a 2-D iterable of floats")
 
     # Interpret label as normalized coordinates in [0,1]; clamp
-    # def clamp01(v): return max(0.0, min(1.0, v))
-    def scale01(v): return (v + 5.0) / 25  # from [-1,1] to [0,1]
-    nx = scale01(lx)
-    ny = scale01(ly)
+    def scale(v): return (v + imu_max) / imu_min * 2.0 - 1.0  # from [-10,10] to [-1,1]
+    nx = scale(lx)
+    ny = scale(ly)
 
     px = int(nx * (inset_w - 1))
     py = int(ny * (inset_h - 1))
