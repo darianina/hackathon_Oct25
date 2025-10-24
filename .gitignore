@@ -6,13 +6,5 @@ __pycache__/
 *.cache
 
 # Ignore image files and common image directories
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.svg
-*.webp
-*.bmp
-*.ico
 data/
 res/
