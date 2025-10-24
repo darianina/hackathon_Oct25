@@ -38,7 +38,7 @@ The sensor CSVs include the following fields:
 - `wz_radDs`: angular rate around the z-axis of the body frame, in rad/s  
 - `q_OB = [qw, qx, qy, qz]^T`: components of the orientation quaternion (Hamilton convention)
 
-![vis/uav.jpg]
+![UAV Frame](vis/uav.jpg){ width=33% }
 
 ## Notes
 - Prefer online approaches that do not use future frames at inference.
