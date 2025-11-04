@@ -25,6 +25,8 @@ A baseline implementation is provided as `baseline.py`. It uses optical flow and
 
 ## Data
 - Framed videos for 3 flight missions are provided.
+- Distance between IMU unit and the camera is approximately 30 cm.
+- Field of view of the camera is 49° horizontal, 39° vertical
 - Sensor data is provided in CSV files and is only partially synchronized — small time shifts may exist between video frames and sensor records.
 - Matching between video frames and sensor data has been done to the best of our ability; improving synchronization can be part of your solution.
 - A `raw` folder is included with more extensive logs and raw video files.
@@ -43,8 +45,8 @@ The sensor CSVs include the following fields:
 ![UAV Frame](vis/uav.jpg)
 
 ## Notes
+- Use the provided baseline as a starting point or implement a new method as desired.
 - Prefer online approaches that do not use future frames at inference.
 - Synchronization between sensors and frames may require additional processing; this is a valid area for improvement.
-
-- Use the provided baseline as a starting point or implement a new method as desired.
+- Video contains frozen frames because it was a stream: piece of advice is to detect them and neglect them.
 
