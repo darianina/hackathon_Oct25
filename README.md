@@ -5,8 +5,7 @@ This task is to build an online (preferably real-time) video stabilization metho
 
 ## Setup
 1. Request access to the dataset https://tytantechnologies-my.sharepoint.com/:u:/r/personal/daria_m_tytan-technologies_com/Documents/Hackaton_Oct25/data.zip?csf=1&web=1&e=96pdUg by emailing:
-    - daria.m@tytan-technologies.com
-    - jerge.moreno@tytan-technologies.com  
+    - robert@tytan-technologies.com
     In the email subject put your name, surname and email. You should receive access information in reply.
 2. Extract the downloaded data and place it under the `data` directory in the project folder.
 3. Install the dependencies: e.g. 
@@ -49,4 +48,5 @@ The sensor CSVs include the following fields:
 - Prefer online approaches that do not use future frames at inference.
 - Synchronization between sensors and frames may require additional processing; this is a valid area for improvement.
 - Video contains frozen frames because it was a stream: piece of advice is to detect them and neglect them.
+
 
