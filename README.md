@@ -1,8 +1,9 @@
 # Hackathon challenge: Visual Odometry using IMU data
 ## Subchallenge (or alternative track): Online Video Stabilization using IMU data
 ## Overview
-Main challenge: The task is to create a map of local positions of the drone from the images and IMU sensor data.​
-Subchallenge: This task is to build an online (preferably real-time) video stabilization method for UAV footage. We provide framed videos from three flight missions and corresponding sensor logs. The focus is on methods that do not rely on future frames at inference time.
+Main challenge: the task is to create a map of local positions of the drone from the images and IMU sensor data.​
+
+Subchallenge: this task is to build an online (preferably real-time) video stabilization method for UAV footage. We provide framed videos from three flight missions and corresponding sensor logs. The focus is on methods that do not rely on future frames at inference time.
 
 ## Setup
 1. Request access to the dataset https://tytantechnologies-my.sharepoint.com/:u:/r/personal/daria_m_tytan-technologies_com/Documents/Hackaton_Oct25/data.zip?csf=1&web=1&e=96pdUg by emailing:
@@ -50,6 +51,7 @@ The sensor CSVs include the following fields:
 - Use the provided baseline as a starting point or implement a new method  - you choose what is more convenient for you.
 - For the stabilization challenge, prefer online approaches that do not use future frames at inference.
 - Synchronization between sensors and frames may require additional processing; this is a valid area for improvement.
+
 
 
 
